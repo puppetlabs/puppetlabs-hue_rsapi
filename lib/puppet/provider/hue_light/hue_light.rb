@@ -19,13 +19,13 @@ class Puppet::Provider::HueLight::HueLight
 
     lights.map do |light|
       {
-        name: light.first,
-        on: light.last['state']['on'],
-        bri: light.last['state']['bri'],
-        hue: light.last['state']['hue'],
-        sat: light.last['state']['sat'],
+        name:   light.first,
+        on:     light.last['state']['on'],
+        bri:    light.last['state']['bri'],
+        hue:    light.last['state']['hue'],
+        sat:    light.last['state']['sat'],
         effect: light.last['state']['effect'],
-        alert: light.last['state']['alert']
+        alert:  light.last['state']['alert']
       }
     end
   end
