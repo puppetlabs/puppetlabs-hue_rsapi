@@ -1,7 +1,12 @@
 
 # hue_rsapi
 
-The module was created as a simple example of the new way to create a custom Type and Provider using the [Resource API](https://github.com/puppetlabs/puppet-resource_api).
+> This module is not supported or maintained by Puppet and does not qualify for Puppet Support plans.
+> It's provided without guarantee or warranty and is not intended for public use. It was created as a
+> simple example of the new way to create a custom Type and Provider using the
+> [Resource API](https://github.com/puppetlabs/puppet-resource_api).
+>
+> [tier:demo]
 
 
 #### Table of Contents
