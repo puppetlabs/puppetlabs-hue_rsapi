@@ -13,22 +13,21 @@ class Puppet::Provider::HueLight::HueLight
   end
 
   def get(context)
-    instances = []
     lights = context.device.hue_get('lights', context.device.connection)
 
-    return instances if lights.nil?
+    return [] if lights.nil?
 
-    lights.each do |light|
-      instances << { name: light.first,
-                     on: light.last['state']['on'],
-                     bri: light.last['state']['bri'],
-                     hue: light.last['state']['hue'],
-                     sat: light.last['state']['sat'],
-                     effect: light.last['state']['effect'],
-                     alert: light.last['state']['alert'] }
+    lights.map do |light|
+      {
+        name:   light.first,
+        on:     light.last['state']['on'],
+        bri:    light.last['state']['bri'],
+        hue:    light.last['state']['hue'],
+        sat:    light.last['state']['sat'],
+        effect: light.last['state']['effect'],
+        alert:  light.last['state']['alert']
+      }
     end
-
-    instances
   end
 
   def update(context, name, should)
